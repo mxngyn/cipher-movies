@@ -1,0 +1,6 @@
+You searched for: <%= @term %>
+
+<% @movies["results"].each do |movie| %>
+	<%= movie["trackCensoredName"] %>
+	<img src="<%= movie["artworkUrl100"] %>">
+<% end %>

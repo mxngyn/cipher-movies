@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create', as: 'create_session'
   get '/signout', to: 'sessions#destroy', as: 'signout'
 
+
+  resources :movies
+  get '/movies/:query' => 'movies#show', as: "search"
 end
