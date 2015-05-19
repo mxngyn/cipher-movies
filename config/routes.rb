@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: 'new_user'
   post '/signup', to: 'users#create', as: 'create_user'
 
-  resources :users, only: [:show, :edit, :update, :delete]
-
   get '/signin', to: 'sessions#new', as: 'new_session'
   get '/dashboard', to: 'sessions#show', as: 'dashboard'
   post '/signin', to: 'sessions#create', as: 'create_session'
