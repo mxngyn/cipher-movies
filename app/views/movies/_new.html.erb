@@ -1,5 +1,6 @@
-<%= form_tag(search_path(:query), method: "get") do  %>
-    <%= label_tag(:term, "Search for:") %>
-    <%= text_field_tag(:term) %>
-    <%= submit_tag("Search") %>	
+<%= form_for(:movie, url: movies_path, method: 'post') do |f| %>
+	<%= f.hidden_field :title, :value => movie["trackCensoredName"]%>
+	<%= f.hidden_field :pic_url, :value => movie["artworkUrl100"]%>
+	<%= f.submit "Add to watched list" %>
 <% end %>
+
