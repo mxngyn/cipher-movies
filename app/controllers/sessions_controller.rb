@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @movies = Movie.where(user_id: @user.id)
   end
 
   def destroy
