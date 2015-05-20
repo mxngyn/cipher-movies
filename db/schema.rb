@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150519202924) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "movies", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -29,6 +32,6 @@ ActiveRecord::Schema.define(version: 20150519202924) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end
