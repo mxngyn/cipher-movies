@@ -9,7 +9,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'settingslogic', '2.0.9'
 gem 'sqlite3', '1.3.10'
 gem 'thin', '1.6.3'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'foundation-rails', '~> 5.5.2.1'
 
 group :doc do
   gem 'sdoc', '0.4.0'
