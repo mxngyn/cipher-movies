@@ -1,13 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Cipher Movies</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	<title>Cipher Movies</title>
+
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "vendor/modernizr" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= render 'layouts/messages' %>
-<%= yield %>
+<body>
+	<nav class="top-bar" data-topbar role="navigation">
+		<ul class="title-area">
+			<li class="name">
+			<h1><%= link_to 'Cipher Movies', root_path %></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<!-- Right Nav Section -->
+			<ul class="right">
+				<% if current_user %>
+					<li class="">
+						<a href="#">Hello, <%= current_user.name %>!</a>
+					</li>
+					<li class="">
+						<%= link_to 'Logout', signout_path(current_user) %>
+					</li>
+				<% else %>
+				<li class="">
+					<%= link_to 'Sign In', new_session_path%>
+				</li>
+				<li class="">
+					<%= link_to 'Sign Up', new_user_path%>
+				</li>
+				<% end %>
+			</ul>
+
+	
+		</section>
+	</nav>
+	<%= render "layouts/messages" %>
+	<%= yield %>
 
 </body>
 </html>

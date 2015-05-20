@@ -1,7 +1,17 @@
-  <%= form_for(:session, url: new_session_path) do |f| %>
-   <%= f.label :email %>
-   <%= f.text_field :email %>
-   <%= f.label :password %>
-   <%= f.password_field :password %>
-   <%= f.submit "Login" %>
-  <% end %>
+<div class="row">
+	<div class="large-2 columns">&nbsp;</div>
+	<div class="large-8 columns">
+		<%= form_for(:session, url: new_session_path) do |f| %>
+		<fieldset>
+			<legend>Create an Account</legend>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+			<%= f.submit "Login" %>
+		</fieldset>
+		<% end %>
+	</div>
+	<div class="large-2 columns">&nbsp;</div>
+</div>

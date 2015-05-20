@@ -1,7 +1,18 @@
-You searched for: <%= @term %>
+<div class="row">
+  <div class="large-2 columns">&nbsp;</div>
+  <div class="large-8 columns">
+  	You searched for: <%= @term %>
 
-<% @movies["results"].each do |movie| %>
-	<%= movie["trackCensoredName"] %>
-	<img src="<%= movie["artworkUrl100"] %>">
-	<%= render partial: "movies/new", locals: { movie: movie } %>
-<% end %>
+  	<ul>
+  	<% @movies["results"].each do |movie| %>
+  		<li>
+	  		<%= movie["trackCensoredName"] %>
+	  		<img src="<%= movie["artworkUrl100"] %>">
+	  		<%= render partial: "movies/new", locals: { movie: movie } %>
+  		</li>
+  	<% end %>
+  	</ul>
+  </div>
+  <div class="large-2 columns">&nbsp;</div>
+</div>
+
