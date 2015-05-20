@@ -8,7 +8,6 @@ gem 'jquery-rails', '2.0.2'
 # gem 'pg', '0.18.1'
 gem 'settingslogic', '2.0.9'
 gem 'sqlite3', '1.3.10'
-gem 'turbolinks', '2.5.3'
 gem 'thin', '1.6.3'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
