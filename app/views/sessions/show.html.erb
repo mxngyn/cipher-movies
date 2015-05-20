@@ -1,12 +1,21 @@
-Hello <%= @user.name %>
+<div class="row">
+  <div class="large-2 columns">&nbsp;</div>
+  <div class="large-8 columns">
+  	<%= render "searches/new" %>
 
-<%= render "searches/new" %>
+  	<h1>Movies You've Watched</h1>
+  	<% if @movies %>
+  		<ul>
+  		<% @movies.each do |movie| %>
+  			<li>
+  				<%= movie.title %>
+  				<img src="<%= movie.pic_url %>">
+  			</li>
+  		<% end %>
+  		</ul>
+  	<% end %>
+  </div>
+  <div class="large-2 columns">&nbsp;</div>
+</div>
 
-<h1>Movies You've Watched</h1>
-<% if @movies %>
-	<% @movies.each do |movie| %>
-		<%= movie.title %>
-		<img src="<%= movie.pic_url %>">
-	<% end %>
-<% end %>
-<%= link_to 'Logout', signout_path(current_user) %>
+
