@@ -18,8 +18,13 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
-    @movies = Movie.where(user_id: @user.id)
+    if session[:user_id] != nil
+      @user = User.find(session[:user_id])
+      @movies = Movie.where(user_id: @user.id)
+    else
+      flash[:notice] = "Please log in or create an account."
+      redirect_to :root
+    end
   end
 
   def destroy
